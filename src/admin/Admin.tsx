@@ -4,6 +4,7 @@ import simpleRestProvider from 'ra-data-simple-rest';
 import authProvider from './authProvider';
 
 import { UserList, UserEdit, UserCreate, UserShow} from './Users';
+import { CategoryList, CategoryEdit, CategoryCreate, CategoryShow} from './Categories';
 
 const httpClient = (url: any, options: any) => {
   if (!options) {
@@ -40,7 +41,15 @@ export const Admin: FC = () => {
         // edit={UserEdit}
         // create={UserCreate}
 
-      />),
+        />),
+        <Resource
+        name="categories"
+        list={UserList}
+        edit={UserEdit}
+        create={UserCreate}
+        show={UserShow}
+
+      />
       ]}
       
     </ReactAdmin>

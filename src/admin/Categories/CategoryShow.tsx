@@ -7,7 +7,7 @@ import { TabbedShowLayout } from 'react-admin';
 import { Tab } from 'react-admin';
 
 
-export const UserShow: FC = (props) => {
+export const CategoryShow: FC = (props) => {
   const { permissions } = usePermissions();
   console.log(props);
 
