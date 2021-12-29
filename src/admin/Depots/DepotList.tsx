@@ -17,7 +17,7 @@ import { JsonField, JsonInput } from "react-admin-json-view";
 
 // const { loading, permissions } = usePermissions();
 
-export const UserList: FC = (props) => {
+export const DepotList: FC = (props) => {
   const { permissions } = usePermissions();
 
   return (
@@ -26,7 +26,6 @@ export const UserList: FC = (props) => {
         <Datagrid rowClick="edit">
           <TextField source="id" />
           <TextField source="name" />
-          <EmailField source="email" />
         
           {/* <TextField source="role" /> */}
       

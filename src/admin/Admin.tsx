@@ -4,7 +4,8 @@ import simpleRestProvider from 'ra-data-simple-rest';
 import authProvider from './authProvider';
 
 import { UserList, UserEdit, UserCreate, UserShow} from './Users';
-import { CategoryList, CategoryEdit, CategoryCreate, CategoryShow} from './Categories';
+import { CategoryList, CategoryEdit, CategoryCreate, CategoryShow } from './Categories';
+import {DepotList,DepotEdit,DepotCreate,DepotShow} from './Depots'
 
 const httpClient = (url: any, options: any) => {
   if (!options) {
@@ -43,13 +44,22 @@ export const Admin: FC = () => {
 
         />),
         <Resource
-        name="categories"
-        list={UserList}
-        edit={UserEdit}
-        create={UserCreate}
-        show={UserShow}
+        name="depots"
+        list={DepotList}
+        edit={DepotEdit}
+        create={DepotCreate}
+        show={DepotShow}
 
-      />
+        />,
+        <Resource
+        name="categories"
+        list={CategoryList}
+        edit={CategoryEdit}
+        create={CategoryCreate}
+        show={CategoryShow}
+
+        />
+        
       ]}
       
     </ReactAdmin>
