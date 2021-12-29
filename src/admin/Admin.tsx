@@ -6,6 +6,9 @@ import authProvider from './authProvider';
 import { UserList, UserEdit, UserCreate, UserShow} from './Users';
 import { CategoryList, CategoryEdit, CategoryCreate, CategoryShow } from './Categories';
 import {DepotList,DepotEdit,DepotCreate,DepotShow} from './Depots'
+import {MagasinList,MagasinEdit,MagasinCreate,MagasinShow} from './Magasins'
+import { ContainerCreate, ContainerEdit, ContainerShow, ContainerList } from './Containers';
+import { ProductCreate,ProductEdit,ProductShow,ProductList}  from './Products';
 
 const httpClient = (url: any, options: any) => {
   if (!options) {
@@ -28,38 +31,19 @@ export const Admin: FC = () => {
     <ReactAdmin dataProvider={dataProvider} authProvider={authProvider}>
       {(permissions: 'admin' | 'normal'| 'restricted') => [
         permissions === 'admin' ? (
-          <Resource
-            name="users"
-            list={UserList}
-            edit={UserEdit}
-            create={UserCreate}
-            show={UserShow}
-
-          />
-        ) :     (   <Resource
-        name="users"
-        list={UserList}
-        // edit={UserEdit}
-        // create={UserCreate}
-
-        />),
-        <Resource
-        name="depots"
-        list={DepotList}
-        edit={DepotEdit}
-        create={DepotCreate}
-        show={DepotShow}
-
-        />,
-        <Resource
-        name="categories"
-        list={CategoryList}
-        edit={CategoryEdit}
-        create={CategoryCreate}
-        show={CategoryShow}
-
-        />
+          <Resource name="users" list={UserList} edit={UserEdit} create={UserCreate}show={UserShow}/>
+        ) : (<Resource name="users" list={UserList} />),
         
+        <Resource name="depots" list={DepotList} edit={DepotEdit} create={DepotCreate} show={DepotShow} />,
+        
+        <Resource name="magasins" list={MagasinList} edit={MagasinEdit} create={MagasinCreate} show={MagasinShow} />,
+
+        <Resource name="categories" list={CategoryList} edit={CategoryEdit} create={CategoryCreate} show={CategoryShow} />,
+
+        <Resource name="containers" list={ContainerList} edit={ContainerEdit} create={ContainerCreate} show={ContainerShow} />,
+        
+        <Resource name="products" list={ProductList} edit={ProductEdit} create={ProductCreate} show={ProductShow} />,
+
       ]}
       
     </ReactAdmin>
