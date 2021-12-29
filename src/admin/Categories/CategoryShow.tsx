@@ -18,15 +18,12 @@ export const UserShow: FC = (props) => {
         <TabbedShowLayout>
             <Tab label="summary">
             <TextField label="Id" source="id" />
-            <TextField source="username" />
-            <TextField source="email" />
+            <TextField source="name" />
             </Tab>
-            <Tab label="invoices" >
+            <Tab label="Products" >
             </Tab>
-            <Tab label="permissions" >
-            <TextField source="permitted.sources" label="sources" />
-            <TextField source="permitted.areas" label="areas" />
-            <TextField source="permitted.tags" label="tags"/>
+            <Tab label="Othter ..." >
+            
             </Tab>
         </TabbedShowLayout>
 

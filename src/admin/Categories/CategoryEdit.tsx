@@ -1,38 +1,35 @@
 import React, { FC } from 'react';
 import {
-  Create,
+  Edit,
   SimpleForm,
   TextInput,
   PasswordInput,
   BooleanInput,
-  ReferenceInput,
-  SelectInput, SelectField,
-  O
+  SelectInput
 } from 'react-admin';
 import { JsonField, JsonInput } from "react-admin-json-view";
 
-import { CT_SELECT_I18N } from './UserEdit';
+export const CT_SELECT_I18N = [
+  {id: 'admin', text: 'Admin'},
+  { id: 'normal', text: 'Normal' },
+  {id: 'restricted', text: 'Restricted'},
 
-
-export const UserCreate: FC = (props) => (
-  <Create {...props}>
+];
+export const CategoryEdit: FC = (props) => (
+  <Edit {...props}>
     <SimpleForm>
-      <TextInput source="username" />
-      <TextInput source="email" />
-      <PasswordInput source="password" />
-     
+      <TextInput disabled source="id" />
+      <TextInput source="name" />
 
+   
       {/* <SelectInput
         source="role"
         choices={CT_SELECT_I18N}
         translateChoice={false}
         optionValue="id"
         optionText="text"
-    /> */}
-
+      /> */}
       {/* <BooleanInput source="is_active" /> */}
-
-
     </SimpleForm>
-  </Create>
+  </Edit>
 );

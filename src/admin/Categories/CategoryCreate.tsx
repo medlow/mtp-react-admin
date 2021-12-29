@@ -11,15 +11,13 @@ import {
 } from 'react-admin';
 import { JsonField, JsonInput } from "react-admin-json-view";
 
-import { CT_SELECT_I18N } from './UserEdit';
+// import { CT_SELECT_I18N } from './UserEdit';
 
 
-export const UserCreate: FC = (props) => (
+export const CategoryCreate: FC = (props) => (
   <Create {...props}>
     <SimpleForm>
-      <TextInput source="username" />
-      <TextInput source="email" />
-      <PasswordInput source="password" />
+      <TextInput source="name" />
      
 
       {/* <SelectInput
