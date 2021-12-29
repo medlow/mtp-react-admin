@@ -1,5 +1,8 @@
 import React, { FC } from 'react';
 import { usePermissions } from 'react-admin';
+import { ReferenceManyField } from 'react-admin';
+import { EditButton } from 'react-admin';
+import { Datagrid } from 'react-admin';
 import { DateField } from 'react-admin';
 
 
@@ -22,7 +25,8 @@ export const CategoryShow: FC = (props) => {
                       <TextField source="name" />
                       <DateField source="created_at" />
             </Tab>
-            <Tab label="Products" >
+                  <Tab label="Products" >
+
             </Tab>
             
             <Tab label="Othter ..." >

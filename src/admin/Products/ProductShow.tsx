@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import { usePermissions } from 'react-admin';
+import { ReferenceField } from 'react-admin';
 import { DateField } from 'react-admin';
 
 
@@ -29,15 +30,21 @@ export const ProductShow: FC = (props) => {
             <NumberField source="quantity_per_carton" label="quantité par carton" className="red" /> 
             <NumberField source="quantity_init" label="quantité initiale" className="red" /> 
             <NumberField source="quantity_left" label="quantité restante" className="red" /> 
+            <NumberField source="container_id" label="quantité res" className="red" /> 
+
             <ChipField className="green" source="category.name" /> 
             <DateField source="created_at" label="Date" className="red" /> 
             </Tab>
-            <Tab label="Products" >
+          <Tab label="Products" >
+          <ReferenceField label="Container" source="container_id" reference="containers">
+                <TextField source="reference" />
+            </ReferenceField>
+            <ReferenceField label="Category" source="category_id" reference="categories">
+                <TextField source="name" />
+            </ReferenceField>
             </Tab>
             <Tab label="permissions" >
-            {/* <TextField source="permitted.sources" label="sources" />
-            <TextField source="permitted.areas" label="areas" />
-            <TextField source="permitted.tags" label="tags"/> */}
+
             </Tab>
         </TabbedShowLayout>
 

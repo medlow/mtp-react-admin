@@ -1,5 +1,8 @@
 import React, { FC } from 'react';
 import { usePermissions } from 'react-admin';
+import { ReferenceManyField,  } from 'react-admin';
+import { SingleFieldList } from 'react-admin';
+
 import { DateField } from 'react-admin';
 
 
@@ -27,16 +30,13 @@ export const ContainerShow: FC = (props) => {
             <NumberField source="frais_voyage" label="frais de voyage" locales="fr-FR" options={{ style: 'currency', currency: 'XOF' }}/> 
                       <NumberField source="total" label="Total" /> 
                       <DateField source="created_at" />
-                      
-
+        
             </Tab>
-            <Tab label="Products" >
+                  
+                  <Tab label="Products" >
+    
             </Tab>
-            <Tab label="permissions" >
-            {/* <TextField source="permitted.sources" label="sources" />
-            <TextField source="permitted.areas" label="areas" />
-            <TextField source="permitted.tags" label="tags"/> */}
-            </Tab>
+   
         </TabbedShowLayout>
 
     </Show>
